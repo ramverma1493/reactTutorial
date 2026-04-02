@@ -3,7 +3,7 @@ import FruitList from './components/FruitList'
 import Author from './components/Author'
 import Counter from './components/Counter'
 
-export default function p() {
+export default function app() {
   //lifting up State
   let [clicked, setClicked] = useState(0);
 

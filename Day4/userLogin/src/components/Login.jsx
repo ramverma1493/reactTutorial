@@ -4,6 +4,7 @@ import style from './Login.module.css'
 export default function Login() {
   let[user, setUser] = useState("")
   let[pass, setPass] = useState("")
+  let [login, setLogin] = useState(false)
 
   let handleChange = (e)=>{
     let name = e.target.name
@@ -19,20 +20,34 @@ export default function Login() {
 
   let handleSubmit = (e)=>{
     e.preventDefault()
+    setLogin(true)
     console.log(`Welcome ${user}, your password is ${pass}`)
   }
 
   return (
-    <div className={style.login}>
-      Login to your Account
-      <form className={style.form} onSubmit={handleSubmit}>
-        <input type="text" name='user' id={style.user} placeholder='User Name' 
-        onChange={handleChange}/>
-        <input type="text" name='password' id={style.pass} placeholder='Password' 
-        onChange={handleChange}/>
-        <button className={style.btn}>Login</button>
-        <p className={style.opt}>Don't have an account ? click here</p>
-      </form>
-    </div>
+    <>
+      {
+        !login&&
+        <div className={style.login}>
+          Login to your Account
+          <form className={style.form} onSubmit={handleSubmit}>
+            <input type="text" name='user' id={style.user} placeholder='User Name' 
+            onChange={handleChange}/>
+            <input type="text" name='password' id={style.pass} placeholder='Password' 
+            onChange={handleChange}/>
+            <button className={style.btn}>Login</button>
+            <p className={style.opt}>Don't have an account ? click here</p>
+          </form>
+        </div>
+      }
+      {
+        login&&
+        <div>
+          <h1>
+            Welcome {user}, you can go ahead!
+          </h1>
+        </div>
+      }
+    </>
   )
 }

@@ -7,7 +7,7 @@ export default function FruitList({list, clk}) {
       <p>Clicked*2: {clk}</p>
       <ol>
         {
-            list.map((x,ind) => (<li key={ind}>{x}</li>))
+            list.map((ele,idx) => (<li key={idx}>{ele}</li>))
         }
       </ol>
     </div>
