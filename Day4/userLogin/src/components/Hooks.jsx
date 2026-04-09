@@ -6,26 +6,28 @@ export default function Hooks() {
     let[time,setTime] = useState(0)
     useEffect(()=>{
         let interval =  setInterval(()=>{
-            console.log(time)
+            //console.log(time)
             setTime(time+1);
         },1000)
         return ()=>clearInterval(interval)
     },[time])
 
+    let [n, setN] = useState(5);
+
     let fact = useMemo(()=>{
             let res = 1
-            for(let i = 1; i<=time; i++){
+            for(let i = 1; i<=n; i++){
                 res *= i
             }
-            console.log(res);
+            //console.log(res);
             return res;
-        },[time]
+        },[n]
     )
   return (
     <div>
       <h3>Timer:</h3>
       <p>{time}</p>
-      <p>{`Factorial of ${time} is ${fact}`}</p>
+      <p>{`Factorial of ${n} is ${fact}`}</p>
     </div>
   )
 }

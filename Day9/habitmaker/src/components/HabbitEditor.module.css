@@ -1,0 +1,55 @@
+.editor{
+    border: 1.5px solid black;
+    padding: 2rem;
+    width: 35%;
+    margin: 10vh auto;
+    border-radius: 4px;
+}
+
+
+.habit{
+    border: 1.5px solid black;
+    padding: 2rem;
+    width: 35%;
+    margin: 10vh auto;
+    border-radius: 4px;
+}
+.habit h1{
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#inp, .item{
+    font-size: 18px;
+    border: none;
+    box-shadow: 0px 0px 1px 1px;
+    padding: 0.3rem 1.5rem;
+    width: 69%;
+    margin: 0.2rem;
+    border-radius: 8px;
+}
+
+.addbtn:hover{
+    background-color: rgb(22, 0, 118);
+    cursor: pointer;
+}
+
+.habitItems{
+    padding: 20px;
+    max-height: 180px;
+    overflow-y: scroll;
+}
+
+.items{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+
+.item{
+    list-style: none;
+}
